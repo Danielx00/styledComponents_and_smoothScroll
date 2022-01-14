@@ -1,11 +1,11 @@
 import { Link as LinkR } from "react-router-dom";
-import { Link as LinkS } from "react-router-dom";
+import { Link as LinkS } from "react-scroll"
 import styled from "styled-components";
 
 export const Nav = styled.nav`
-  background-color: #000;
+  background-color: ${({scrollNav}) => scrollNav ? '#000' : 'transparent'};
   height: 80px;
-  /* margin-top: 80px; */
+  margin-top: -80px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -13,6 +13,7 @@ export const Nav = styled.nav`
   position: sticky;
   top: 0;
   z-index: 10;
+  transition: .8s all ease-out;
 
   @media screen and (max-width: 960px) {
     transition: 0.8s all ease;
